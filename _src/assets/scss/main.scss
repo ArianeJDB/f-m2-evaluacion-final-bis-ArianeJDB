@@ -8,3 +8,33 @@ body {
 .main__container {
   display: flex;
 }
+
+.face__side {
+  display: flex;
+  list-style: none;
+
+
+}
+
+.face-up {
+  width: 160px;
+  height: 195px;
+  border: solid black 2px;
+  margin: 0;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+
+
+.face-down {
+  border: solid black 2px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+// .results__cards {
+//   display: flex;
+//   flex-direction: column;
+
+// }
