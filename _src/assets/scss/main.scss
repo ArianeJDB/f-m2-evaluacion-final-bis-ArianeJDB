@@ -1,4 +1,4 @@
-@import 'core/settings';
+
 
 body {
 
@@ -19,7 +19,7 @@ body {
 
   width: 160px;
   height: 195px;
-  border: solid black 2px;
+  
   margin: 0;
   border-radius: 5px;
   margin: 10px;
@@ -30,17 +30,14 @@ body {
 }
 
 
-
 .face-down {
-  border: solid black 2px;
+
   border-radius: 5px;
   margin: 10px;
+  width: 160px;
+  height: 195px;
   background-image: url('https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB');
 }
 
 
-// .results__cards {
-//   display: flex;
-//   flex-direction: column;
 
-// }

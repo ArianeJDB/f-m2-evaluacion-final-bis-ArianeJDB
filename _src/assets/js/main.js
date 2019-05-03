@@ -18,26 +18,31 @@ for (const items of input) {
           for (let i = 0; i < data.length; i++) {
             const item = data[i];
             const { image } = item;
-
             const imgUp = document.createElement('img');
             imgUp.setAttribute('src', image);
-            imgUp.setAttribute('class', 'hidden');
+            const showCards = e => {
+              const triggerCards = e.currentTarget;
 
-            // imgUp.setAttribute('class', 'face-down');
+              if (triggerCards.classList.contains('face-down')) {
+                imgUp.classList.remove('hidden');
+                triggerCards.classList.remove('face-down');
+                triggerCards.classList.add('face-up');
+              } else {
+                imgUp.classList.add('hidden');
+                triggerCards.classList.add('face-down');
+                triggerCards.classList.remove('face-up');
+              }
+            };
+
+            imgUp.setAttribute('class', 'face-up');
+            imgUp.setAttribute('class', 'hidden');
             const elementUp = document.createElement('li');
             elementUp.setAttribute('class', 'face-down');
             elementUp.appendChild(imgUp);
             list.appendChild(elementUp);
 
-            // if (imgUp.classList.contains('face-down')) {
-            //   imgUp.classList.remove('hidden', 'face-down');
-            //   imgUp.classList.add('face-up');
-            // } else {
-            //   imgUp.classList.add('hidden', 'face-down');
-            //   imgUp.classList.remove('face-up');
-            // }
+            elementUp.addEventListener('click', showCards);
           }
-
         });
     };
     btn.addEventListener('click', startGame);
@@ -45,12 +50,3 @@ for (const items of input) {
   items.addEventListener('click', chooseCards);
 }
 
-// const elementDown = document.createElement('li');
-//       const imgDown = document.createElement('img');
-//       imgDown.setAttribute('class', 'face-down');
-//       imgDown.setAttribute(
-//         'src',
-//         'https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB'
-//       );
-//       elementDown.appendChild(imgDown);
-//       list.appendChild(elementDown);
