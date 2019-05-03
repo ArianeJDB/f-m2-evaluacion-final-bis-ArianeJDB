@@ -9,14 +9,14 @@ body {
   display: flex;
 }
 
-.face__side {
+.list {
   display: flex;
   list-style: none;
-
 
 }
 
 .face-up {
+
   width: 160px;
   height: 195px;
   border: solid black 2px;
@@ -25,13 +25,19 @@ body {
   margin: 10px;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 
 
 .face-down {
   border: solid black 2px;
   border-radius: 5px;
   margin: 10px;
+  background-image: url('https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB');
 }
+
 
 // .results__cards {
 //   display: flex;
