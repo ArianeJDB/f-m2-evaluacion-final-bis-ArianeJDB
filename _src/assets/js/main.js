@@ -1,14 +1,32 @@
 'use strict';
 
 const input = document.querySelectorAll('input');
+const inputFour = document.getElementById('four');
+const inputSix = document.getElementById('six');
+const inputEight = document.getElementById('eight');
+
 const btn = document.querySelector('.btn');
 const list = document.querySelector('.list');
+
+if (JSON.parse(localStorage.getItem('Cards')) !== null) {
+  if (parseInt(JSON.parse(localStorage.getItem('Cards'))) === 4) {
+    inputFour.checked = true;
+  } else if (parseInt(JSON.parse(localStorage.getItem('Cards'))) === 6) {
+    inputSix.checked = true;
+  } else {
+    inputEight.checked = true;
+  }
+} else {
+  input.value = '';
+}
 
 for (const items of input) {
   const chooseCards = e => {
     const trigger = e.currentTarget;
 
     const value = trigger.value;
+
+    localStorage.setItem('Cards', JSON.stringify(trigger.value));
     const startGame = () => {
       const api = `https://raw.githubusercontent.com/Adalab/cards-data/master/${value}.json`;
       fetch(api)
@@ -49,4 +67,3 @@ for (const items of input) {
   };
   items.addEventListener('click', chooseCards);
 }
-
