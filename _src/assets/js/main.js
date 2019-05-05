@@ -23,11 +23,11 @@ if (JSON.parse(localStorage.getItem('Cards')) !== null) {
 for (const items of input) {
   const chooseCards = e => {
     const trigger = e.currentTarget;
-
     const value = trigger.value;
-
     localStorage.setItem('Cards', JSON.stringify(trigger.value));
+console.log(value);
     const startGame = () => {
+
       const api = `https://raw.githubusercontent.com/Adalab/cards-data/master/${value}.json`;
       fetch(api)
         .then(response => response.json())
